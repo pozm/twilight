@@ -5,12 +5,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Ready {
-    pub application: PartialApplication,
+    // pub application: PartialApplication,
     pub guilds: Vec<UnavailableGuild>,
-    pub resume_gateway_url: String,
     pub session_id: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub shard: Option<ShardId>,
     pub user: CurrentUser,
     #[serde(rename = "v")]
     pub version: u64,
@@ -43,14 +40,12 @@ mod tests {
         ];
 
         let ready = Ready {
-            application: PartialApplication {
-                flags: ApplicationFlags::empty(),
-                id: Id::new(100),
-            },
+            // application: PartialApplication {
+            //     flags: ApplicationFlags::empty(),
+            //     id: Id::new(100),
+            // },
             guilds,
-            resume_gateway_url: "wss://gateway.discord.gg".into(),
             session_id: "foo".to_owned(),
-            shard: Some(ShardId::new(4, 7)),
             user: CurrentUser {
                 accent_color: None,
                 avatar: None,

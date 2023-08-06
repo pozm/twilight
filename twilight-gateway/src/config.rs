@@ -177,9 +177,9 @@ impl ConfigBuilder {
     ///
     /// Panics if loading TLS certificates fails.
     pub fn new(mut token: String, intents: Intents) -> Self {
-        if !token.starts_with("Bot ") {
-            token.insert_str(0, "Bot ");
-        }
+        // if !token.starts_with("Bot ") {
+        //     token.insert_str(0, "Bot ");
+        // }
 
         Self {
             inner: Config {

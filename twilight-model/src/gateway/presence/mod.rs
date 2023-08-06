@@ -35,11 +35,16 @@ use serde::{
 };
 use std::fmt::{Formatter, Result as FmtResult};
 
+fn go_away_id() -> Id<GuildMarker> {
+    Id::new(0)
+}
+
 #[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 pub struct Presence {
     #[serde(default)]
     pub activities: Vec<Activity>,
     pub client_status: ClientStatus,
+    #[serde(default="go_away_id")]
     pub guild_id: Id<GuildMarker>,
     pub status: Status,
     pub user: UserOrId,

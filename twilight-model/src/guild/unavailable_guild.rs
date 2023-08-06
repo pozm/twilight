@@ -4,9 +4,12 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 pub struct UnavailableGuild {
     pub id: Id<GuildMarker>,
+    #[serde(default="ret_false")]
     pub unavailable: bool,
 }
-
+fn ret_false() -> bool {
+    false
+}
 #[cfg(test)]
 mod tests {
     use super::UnavailableGuild;

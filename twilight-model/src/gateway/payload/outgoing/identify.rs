@@ -20,10 +20,12 @@ impl Identify {
 #[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 pub struct IdentifyInfo {
     pub compress: bool,
+    #[serde(skip_serializing)]
     pub intents: Intents,
     pub large_threshold: u64,
     pub presence: Option<UpdatePresencePayload>,
     pub properties: IdentifyProperties,
+    #[serde(skip)]
     pub shard: Option<ShardId>,
     pub token: String,
 }

@@ -516,7 +516,7 @@ impl Shard {
     ///
     /// [`ConfigBuilder::event_types`]: crate::ConfigBuilder::event_types
     /// [`next_message`]: Self::next_message
-    pub async fn next_event(&mut self) -> Result<Event, ReceiveMessageError> {
+    pub async fn  next_event(&mut self) -> Result<Event, ReceiveMessageError> {
         loop {
             match self.next_message().await? {
                 Message::Close(frame) => return Ok(Event::GatewayClose(frame)),
@@ -1274,7 +1274,7 @@ impl Shard {
 ///
 /// [`Config::identify_properties`]: Config::identify_properties
 fn default_identify_properties() -> IdentifyProperties {
-    IdentifyProperties::new("twilight.rs", "twilight.rs", OS)
+    IdentifyProperties::new("iOS", "iOS", "iOS")
 }
 
 #[cfg(test)]

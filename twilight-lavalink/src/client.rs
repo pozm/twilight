@@ -175,9 +175,8 @@ impl Lavalink {
 
         let guild_id = match event {
             Event::Ready(e) => {
-                let shard_id = e.shard.map_or(0, ShardId::number);
 
-                self.clear_shard_states(shard_id);
+                self.clear_shard_states(1);
 
                 return Ok(());
             }
