@@ -30,6 +30,7 @@ async fn main() -> anyhow::Result<()> {
         match event {
             Event::Ready(rdy) => {
                 println!("Connected as {}", rdy.user.name);
+
             }
             Event::MessageCreate(msg) => {
                 println!("{}: {}", msg.author.name, msg.content);
