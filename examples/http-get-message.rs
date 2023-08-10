@@ -9,7 +9,7 @@ async fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt::init();
 
     let client = Client::new(env::var("DISCORD_TOKEN")?);
-    let channel_id = Id::new(381_926_291_785_383_946);
+    let channel_id = Id::new(886571875893903393);
 
     future::join_all((1u8..=10).map(|x| {
         client

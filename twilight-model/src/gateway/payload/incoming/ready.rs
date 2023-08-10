@@ -11,6 +11,8 @@ pub struct Ready {
     pub user: CurrentUser,
     #[serde(rename = "v")]
     pub version: u64,
+    #[serde(skip)]
+    _padding: Option<[u8;10]>
 }
 
 #[cfg(test)]
@@ -62,6 +64,7 @@ mod tests {
                 public_flags: None,
                 verified: None,
             },
+            _padding:None,
             version: 8,
         };
 

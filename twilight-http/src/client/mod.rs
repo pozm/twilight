@@ -116,13 +116,7 @@ use twilight_validate::{
     channel::ChannelValidationError, request::ValidationError, sticker::StickerValidationError,
 };
 
-const TWILIGHT_USER_AGENT: &str = concat!(
-    "DiscordBot (",
-    env!("CARGO_PKG_HOMEPAGE"),
-    ", ",
-    env!("CARGO_PKG_VERSION"),
-    ") Twilight-rs",
-);
+const TWILIGHT_USER_AGENT: &str = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.73 Chrome/108.0.5359.215 Electron/22.3.12 Safari/537.36";
 
 /// Wrapper for an authorization token with a debug implementation that redacts
 /// the string.
